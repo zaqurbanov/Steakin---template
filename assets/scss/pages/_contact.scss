@@ -1,0 +1,117 @@
+
+
+.contact-section{
+    
+    .container{
+
+        @include containermd();
+        padding: 10em 0;
+
+        .contact-wrap{
+            @include flexbox(row,center,stretch,3em);
+            flex-wrap: wrap;
+            .contacts{
+                @include flexbox(row,flex-start,center,3em);
+                flex-wrap: wrap;
+                flex: 1 1 100%;
+                p{
+                    @include p($Poppins,$muted);
+                    flex: 1 1 100%;
+                    text-align: left;
+                }
+
+                @include mq(sm){
+                    flex: 1 1 45%;
+                }
+                .contact-card{
+
+                    @include mq(sm){
+                        flex: 1 1 45%;
+
+                    }
+                    @include flexbox(column,flex-start,flex-start,1em);
+                    h3{
+                        @include h3($Poppins,$black);
+                        font-weight: 600;
+                    }
+                    p{
+                        text-align: left;
+                    }
+                    a{
+                        @include p($Poppins,$yellow);
+                        font-weight: 600;
+                        &:hover{
+                            color:black;
+                        }
+                    }
+
+
+                    .icons{
+                        @include flexbox(row,flex-start,center,1em);
+
+                    
+                        a{
+                            color: white;
+                            padding: 1em;
+                            background-color: black;
+        
+                            &:hover{
+                                background-color: $yellow;
+                            }
+        
+                        }
+                    }
+
+
+
+
+                }
+            }
+
+
+            form{   
+
+                flex: 1 1 100%;
+                @include flexbox(row,center,center,1em);
+                flex-wrap: wrap;
+                @include mq(sm){
+                    flex: 1 1 45%;
+                    gap: 3em;
+                }
+
+                input{
+                   padding: 1em;
+                   border: 1px solid $muted;
+                   outline: none;
+                   flex: 1 1 100%;
+                  
+                   
+
+                    @include mq(sm){
+                        flex: 1 1 45%;
+                    }
+
+                    &[type=button]{
+                        flex: 1 1 100%;
+                        color: white;
+                        background-color: $black;
+                        cursor: pointer;
+                        font-weight: 600;
+                        border: none;
+                        &:hover{
+                            background-color: $yellow;
+                            
+                        }
+                    }
+                   
+                }
+                textarea{
+                    resize: none;
+                    flex: 1 1 100%;
+                    height: 150px;
+                    padding: 1em;
+                }
+            }
+        }
+    }
+}

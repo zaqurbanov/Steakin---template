@@ -1,0 +1,35 @@
+
+
+@mixin square-btn($bg,$bghover,$borderColor:white,$color:white,$hoverColor:white){
+    color: $color;
+    border: 3px solid $borderColor;
+
+    background-color: $bg;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1em;
+    padding: 1em 1.2em;
+    cursor: pointer;
+    position: relative;
+    z-index: 22;
+    transition: all 0.3s ease-in-out;
+    font-family: $Poppins;
+    @include mq(md){
+        font-size: 1.3em;
+    }
+
+    &:hover{
+        background-color: $bghover;
+        color:$hoverColor;
+        border: 3px solid $bghover;
+    }
+}
+
+
+.card-button{
+    
+    @include p($Poppins,white);
+    background-color: $yellow;
+    padding: 1em 2em;
+    border-radius: 10px;
+}

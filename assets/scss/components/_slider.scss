@@ -1,0 +1,270 @@
+#newsSection{
+    margin-top: 7em;
+    .container-md{
+        @include containermd();
+
+        @include flexbox(column,auto,auto,5em);
+        @include mq(sm){
+            @include flexbox(row,auto,auto,5em);
+            flex-wrap: wrap
+
+        };
+        .sectionInfo{
+            @include sectionInfo();
+            
+        }
+
+        .card-swiper{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            .news-card{
+                width: 100%;
+                @include flexbox(column,center,flex-start,1em);
+                cursor: pointer;
+                 
+              
+                .card-title{
+                    @include flexbox(row,center,center,0.5em);
+                    p{
+                        @include p($Poppins,$muted);
+                    }
+                    a{
+                        color: $yellow;
+                    }
+                }
+                .card-name{
+                    @include h4($Poppins,$black);
+                    font-weight: 700;
+                    &:hover{
+                        color: $yellow;
+                    }
+    
+                }
+    
+                .card-body{
+                    @include flexbox(column,center,center,4em);
+                    padding: 2em 0;
+                    .card-img{
+                        width: 100%;
+                        height: 12em;
+                        @include mq(md){
+                            height: 15em;
+                        }
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+    
+                    .card-content{
+                        @include flexbox(column,flex-start,flex-start,2em);
+    
+                        p{
+                            @include p($Poppins,$muted);
+                            text-align: start
+                        }
+                        .button{
+                            @include square-btn(white,$yellow,$yellow,$yellow,white);
+                            border-radius: 30px;
+                        }
+                    }
+    
+                }
+            }
+        
+
+    }
+
+        
+            
+    }
+}
+
+.quote-slider{
+    @include containerlg();
+    
+ 
+    .quoteSlider{
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        // .svg-bottom{
+        //     @include svgBottom();
+
+        // }
+        // .svg-top{
+        //  @include svgTop(); 
+        // }
+        .imgOverlay{
+            @include imgOverlay();
+         }
+         img{
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+             object-position: center;
+          
+ 
+             position: absolute;
+         }
+    
+     .quote-wrapper{
+         width: 100%;
+         height: 100%;
+         min-height: 90vh;
+         @include mq(sm){
+             min-height: 70vh;
+         };
+        
+ 
+         .quote-slide{
+            
+             z-index: 1;
+             height: 100%;
+           margin: auto;
+           padding: 2em;
+
+           i{
+                font-size: 5em;
+                color: white;
+              position: relative;
+              display: block;
+              text-align: center;
+              margin-bottom: 2em;
+           }
+             .quote-content{
+                 text-align: center;
+                 @include flexbox(column,center,center,2em);
+                
+                 
+             h2{
+                 @include h2($Ruthie,white);
+                 letter-spacing: 4px;
+             }
+             p{
+                 @include p($Poppins,$yellow);
+             }
+
+
+             }
+ 
+           
+         }
+     }
+    }
+   
+    
+
+}
+
+.customers-slider-section{
+
+    .container{
+        @include containerlg();
+        height: 90vh;
+
+        @include flexbox(column,center,center,3em);
+     
+        position: relative;
+        .imgOverlay{
+            @include imgOverlay();
+        }
+        .bgImage{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            object-fit: cover;
+            object-position: center;
+        }
+        .sectionInfo{
+            position: relative;
+            z-index: 5;
+           
+            @include flexbox(column,center,center,2em);
+            h2{
+                @include h2($Ruthie,$yellow);
+
+            }
+            h1{
+                @include h1($Abril,white);
+            }
+        }
+        .customer-slider{
+            width: 100%;
+
+            .pagination{
+               bottom: 1em;
+               z-index: 5;
+             color: white;
+            }
+            .customer-slider-wrapper{
+                width: 100%;
+                
+                .customer-slide{
+                    background-color: transparent;
+                    @include containermd() ;
+                    
+                    .content-wrap{
+                        background-color: white; 
+                        position: relative;
+                        padding: 2em 3em;
+
+  @include flexbox(column,center,center,2em);
+
+                    }
+                    
+                  
+                    padding: 1em;
+                   
+
+                    .svg-bottom{
+                        // @include svgBottom();
+                        path{
+                            fill: $black;
+                        }
+                    }
+                    .stars{
+                        i{
+                            color: gold;
+                        }
+                    }
+                    p{
+                        @include p($Poppins,$muted);
+
+                    }
+                    .customer-profile-img{
+
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        padding: 2px;
+                        border: 1px solid $yellow;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                            border-radius: 50%;
+                        }
+                    }
+                   .customer-name{
+                        @include p($Poppins,$yellow);
+                        font-weight: 600;
+                    }
+                    
+
+                }
+
+            }
+        }
+
+    }
+
+
+}

@@ -1,0 +1,145 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.1s ease-in-out;
+}
+html{
+    font-size: min(5vw,14px);
+    @include mq(sm){
+        font-size: min(10vw,12px);
+
+    }
+    @include mq(md){
+        font-size: min(7vw,14px);
+
+    }
+    scroll-behavior: smooth;
+}
+
+
+a{
+    text-decoration: none;
+
+}
+
+ul{
+    list-style: none;
+}
+
+
+
+.background-Image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    z-index: -2;
+    opacity: .6;
+}
+
+.price{
+    font-size: 1em;
+    font-weight: 600;
+    color: #bb9356;
+    line-height: 1.2;
+    @include mq(sm){
+        font-size: 2em;
+    }
+}
+
+.main-text{
+
+    font-family: "Poppins";
+    color: #666;
+    font-size: 1em;
+    line-height: 1em;
+    text-align: center;
+    @include mq(md){
+        font-size: 2em;
+    }
+}
+
+.imgFrame{
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    z-index: 2;
+    top: 5%;
+    left: 5%;
+    border: 1px dotted #bb9356;
+}
+
+.cardFrame{
+    
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 2;
+        top: 0%;
+        left: 0%;
+        border: 1px dotted #bb9356;
+    
+}
+
+.container-md{
+    width: 80%;
+    margin: 0 auto;
+    
+}
+.name{
+    font-family:'Poppins', sans-serif;
+  color: black;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 1em;
+  text-align: center;
+  @include mq(sm){
+    font-size: 1.5em;
+  }
+ }
+
+.svg-top{
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%) rotateX(180deg);
+    z-index: 5;
+    path{
+        fill: white;
+    }
+}
+
+.svg-bottom{
+    position: absolute;
+    bottom: -1px;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+   path{
+    fill: white;
+   }
+
+}
+.svg-left{
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+   path{
+    fill: white;
+   }
+   @include mq(sm){
+
+     position: absolute;
+    
+    color: white;
+    left:-58px;
+    top: 50%;
+    transform: translateY(50%) rotateZ(90deg);
+    z-index: 5;
+   }
+}

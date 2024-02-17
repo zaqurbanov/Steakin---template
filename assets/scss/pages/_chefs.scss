@@ -1,0 +1,167 @@
+
+.person-section{
+
+    .container-md{
+     
+        padding: 7em 0;
+        .person-cards{
+                @include flexbox(row,center,center,2em);
+                flex-wrap: wrap;
+            .person-card{
+                @include flexbox(column,center,center,1em);
+                text-align: center;
+            
+    
+                .person-img{
+                    width: 100%;
+                    height: auto;
+                    position: relative; 
+                    border-radius: 10px;
+                    max-width: 25em;
+                    
+                    .person-overlay{
+                        position: absolute;
+                        bottom: 0;
+                        opacity: 0;
+                        z-index: 3;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        background-color: rgba(6, 5, 5,0.9);
+                        @include flexbox(row,center,center,0);
+                        transition: all 0.5s ease;
+                        .person-icons{
+
+                            
+                            padding: 1em;
+                            @include flexbox(row,center,center,0.5em);
+                            a{
+                                
+                                width: 50px;
+                                height: 50px;
+                                background-color: $yellow;
+                                @include flexbox(row,center,center,0);
+                                position: relative;
+                                opacity: 0;
+                                transition: all 0.5s ease;
+                                i{
+                                    font-size: 20px;
+                                    color: white;
+                                }
+
+                                &.fb{
+                                    transform: translateY(50px);
+                                }
+                                &.twitter{
+                                    transform: translateY(100px);
+                                }
+                                &.pinterest{
+                                    transform: translateY(150px);
+                                }
+                            }
+                        }
+                    }     
+                    img{
+                        width: 100%;
+                        height: 100;
+                        object-fit: cover;
+                        object-position: center;
+                        border-radius: 5px;
+                    }
+
+                    &:hover .person-overlay{
+
+                            width: 100%;
+                            height: 100%;     
+                            opacity: 1;      
+                            
+                            .person-icons{
+                                .fb,.twitter,.pinterest{
+                                    transform: translateY(0);
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                }
+
+                .person-name{
+                    @include p($Poppins,$black);
+                    font-weight: 600;
+                }
+                .person-position{
+                    @include p($Poppins,$muted);
+                }
+            }
+        }
+    }
+}
+
+.skils-section{
+    padding: 7em 0;
+    .container-md{
+
+        
+        .sectionInfo{
+            @include sectionInfo();
+        
+            
+        }
+
+        .skils{
+                @include flexbox(row,center,center,3em);
+                flex-wrap: wrap;
+                margin-top: 7em;
+            .skil-box{
+                flex: 1 1 100%;
+                @include flexbox(column,auto,auto,10px);
+                @include mq(sm){
+                    flex: 1 1 45%;
+                }
+                
+
+                .box-head{
+                    @include flexbox(row,space-between,center,0);
+                    .box-name{
+                        @include p($Poppins,$black);
+                        font-weight: 600;
+
+                    }
+                    .percent{
+                        @include h3($Poppins,$muted);
+                        font-weight: 600;
+                    }
+                }
+
+                .skil-row{
+                    width: 100%;
+                    height: 10px;
+                    background-color: $black;
+                    border-radius: 10px;
+                    position: relative;
+                    padding: 3px;
+                    span{
+                        height: 6px;
+                        background-color: $yellow;
+                        width: 95%;
+                        position: absolute;
+                        left: 2;
+                        border-radius: 10px;
+                        top: 2px;
+                        &.second{
+                            width: 80%;
+                        }
+                        &.thirth{
+                            width: 75%;
+                        }
+                        &.fourth{
+                            width: 60%;
+                        }
+                    }
+                }
+
+            }
+        }
+        
+    }
+}

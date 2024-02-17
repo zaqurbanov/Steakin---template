@@ -1,0 +1,22 @@
+@import './abstracts/mixin';
+
+@import 'abstracts/variables';
+@import './base/reset';
+
+
+
+@import './base/typograpy';
+@import './components/buttons';
+@import './components/slider';
+@import './layouts/footer';
+@import './layouts/forms';
+@import './layouts/header';
+@import'./layouts/navigation';
+@import './pages/home';
+@import './pages/story';
+@import './pages/chefs';
+@import './pages/product';
+@import './layouts/menu';
+@import './pages/contact';
+
+    

@@ -1,0 +1,109 @@
+
+.product-section{
+padding: 7em 0;
+
+    .container-lg{
+        @include containerlg();
+        @include flexbox(column,center,center,2em);
+
+        .result-wrap{
+            @include flexbox(row,space-between,center,0);
+            flex-wrap: wrap;
+            padding: 2em;
+            border: 2px solid rgba($color: #666, $alpha: 0.4);
+           @include containermd();
+            p{
+                @include p($Poppins,$muted);
+            }
+
+            form{
+                border: 1px solid grey;
+                outline: none;
+                
+
+                select{
+                    border: none;
+                    padding: 1em;
+
+                    &:focus {
+                        option{
+                            padding: 1em;
+                        }
+                    }
+                    option{
+                        padding: 1em;
+                        color: $muted;
+                        margin-top: 1em;
+                    }
+                }
+            }
+
+
+        }
+
+        .product-cards{
+            @include flexbox(row,center,center,2em);
+            @include containermd();
+            padding: 5em 0;
+            @include mq(sm){
+
+                @include flexbox(row,center,center,5em);
+
+            }
+            flex-wrap: wrap;
+
+            .card{
+                flex: 1 1 100%;
+                @include mq(sm){
+                    flex: 1 1 50%;
+                };
+                @include mq(md){
+                    flex: 1 1 25%;
+                };
+                
+                @include flexbox(column,center,center,1em);
+                .card-img{
+                    width: 100%;
+                    height: 350px;
+                    position: relative;
+               
+                    
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                      
+                        object-fit: cover;
+                        object-position: center;
+                    }
+
+                    .card-overlay{
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        background-color: rgba(0,0,0,0.8);
+                        @include flexbox(row,center,center,0);
+                        transition: all 0.3s ease-in;
+
+                    }
+
+                    &:hover{
+                        .card-overlay{
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .card-body{
+                    text-align: center;
+                    @include flexbox(column,center,center,1em);
+
+                    
+                }
+            }
+        }
+
+    }
+}

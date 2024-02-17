@@ -1,0 +1,65 @@
+
+
+#hello-section{
+    padding: 5em 0;
+    .container-md{
+        @include containermd();
+        @include flexbox(column,center,center,3em);
+        text-align: center;
+        @include mq(md){
+            @include flexbox(row,space-between,center,2em);
+        }
+        .left{
+            @include flexbox(column,center,center,1em);
+            flex: 1 1 30%;
+            
+            h1{
+                @include h1($Abril,$black);
+            }
+            h2{
+                @include h2($Ruthie,$yellow);
+            }
+            p{
+                @include p($Poppins,$black);
+            }
+            .button{
+                @include square-btn(white,$yellow,$black,$black);
+                margin-top: 1em
+            }
+        }
+
+        .right{
+            @include flexbox(column,center,center,1em);
+            width: 100%;
+           
+            @include mq(sm){
+                @include flexbox(row,center,center,2em);
+                flex: 1 1 30em;
+            }
+            .img-wrap{
+                position: relative;
+                width: 100%;
+                height: 30em;
+               max-height: 50em;
+              
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+
+                }
+               
+            }
+        }
+
+
+    }
+}
+
+
+
+
+
+
+

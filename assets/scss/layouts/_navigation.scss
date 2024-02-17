@@ -1,0 +1,246 @@
+nav{
+ 
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 2.5%;
+    background-color: white;
+    
+  
+    height: 70px;
+    z-index: 99;
+    @include containerlg();
+
+
+
+    .nav-wrap{
+        @include flexbox(row,space-between,center,3em);
+        
+            margin-top: auto;
+            @include mq(sm){
+                height: 100%;
+            }
+        .logo{
+            margin-left: 1em;
+            width: 20%;
+            max-width: 200px;
+           height: auto;
+       
+            position: relative;
+            z-index: 55;
+          
+            img{
+                position: relative;
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                &.logo-light{
+
+
+display: none;                }
+                
+            }
+        }
+
+        .nav-list{
+           padding: 0em 0em;
+            
+            position: absolute;
+            top: 100px;
+            width: 100%;
+            height: 0px;
+            overflow: hidden;
+            opacity: 0;
+          transition: all .5s ease;
+         
+          @include flexbox(column,flex-start,flex-start,1.5em);
+            
+           
+            background-color: white;
+            // responsive
+            @include mq(sm){
+                position: relative;
+                height: auto;
+                padding: 0;
+                @include flexbox(row,flex-end,center,3em);
+                top: 0;
+                opacity: 1;
+                background-color: transparent;
+                
+
+                li{
+                    
+                }
+                
+
+            }
+
+            li{
+                a{
+                    @include p($Poppins,$black);
+                    font-weight: 600;
+                    word-wrap: break-word;
+                    text-wrap: nowrap;
+                    color: black;
+
+                }
+            }
+            &.active{
+
+             padding: 2em 1em;       
+            height: auto;
+                opacity: 1; 
+                top: 70px;
+            }
+
+            .nav-btn{
+                display: none;
+
+            padding: 1em;     
+                background-color: $yellow;
+                a{
+                    color: white;
+
+                }
+            }
+        }
+
+        .bars{
+
+            @include mq(md){
+                display: none   ;
+            }
+            cursor: pointer;
+          
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 4px;
+            transition: all 0.3s ease-out;
+
+            span{
+                width: 25px;
+                height: 3px;
+                
+                background-color: black;
+                position: relative;
+
+               
+            } 
+
+            &.active{
+
+                  .line1{
+                    transform: rotate(45deg) translateX(5px) translateY(3px);
+
+                }
+            .line3{
+                    transform: rotate(-45deg) translateX(7px) translateY(-5px);
+
+                }
+
+                .line2{
+                    opacity: 0;
+                }
+            }
+          
+
+        }
+
+        .nav-icon-list{
+
+            @include mq(md){
+                @include flexbox(row,center,center,2em);
+            }
+           display: none;
+            padding: 0 2em;
+            border-left: 5px solid grey;
+
+            li{
+                font-size: 15px;
+               a{
+                color: black;
+               }
+            }
+        }
+    }
+
+    @include mq(sm){
+        background-color: transparent;
+        .nav-wrap{
+
+            .nav-list{
+
+                li{
+
+                    a{
+                        color: white;
+                    }
+                }
+            }
+            .nav-icon-list{
+
+                li{
+                    a{
+                        color: white;
+                    }
+                }
+            }
+            .logo{
+                img{
+
+                    &.logo-light{
+
+                        display: block;
+                    }
+                    &.logo-dark{
+                        display: none;
+                    }
+                }
+             
+                
+            }
+        }
+
+        &.active{
+
+            background-color: white;
+            .nav-list{
+
+                li{
+
+                    a{
+                        color: $black;
+                    }
+                }
+            }
+
+            .nav-icon-list{
+                li{
+                    a{
+                        color: $black;
+                    }
+                }
+            }
+
+            .logo{
+                img{
+
+                    &.logo-light{
+
+                        display: none;
+                    }
+                    &.logo-dark{
+                        display: block;
+                    }
+                }
+             
+                
+            }
+        }
+    }
+}

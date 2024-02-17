@@ -1,0 +1,98 @@
+.helloDear-section{
+
+    .helloContainer{
+        padding: 10em 0;
+        @include containermd();
+        @include flexbox(column,center,center,5em);
+        flex-wrap: wrap;
+        .menu-info{
+            @include sectionInfo();
+            flex: 1 1 100%;
+        }
+        .img-container{
+            @include flexbox(row,center,center,2em);
+            flex-wrap: wrap;
+
+            .img{
+                position: relative;
+                flex: 1 1 100%;
+                @include mq(md){
+                    flex: 1 1 49%;
+                };
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .sign-container{
+            @include flexbox(column,center,center,1em);
+            p{
+                @include p($Poppins,$muted)
+            }
+        }
+    }
+}
+
+
+.award-section{
+    margin-top: 8em;
+        .container{
+            @include containermd();
+          
+            h1{
+                @include h1($Poppins,$black);
+                text-align: center;
+            }
+
+            .award-slider{
+                margin-top: 5em;
+                @include mq(sm){
+                    width: 50%;
+                }
+                .award-wrapper{
+
+                    .award-slide{
+                        padding: 1em;
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .award-list-box{
+            @include containerlg();
+            padding: 7em 0;
+            @include flexbox(row,center,flex-start,2em);
+            flex-wrap: wrap;
+            .award-list{
+                &.list-second{
+                    li{
+                        justify-content: flex-start;
+                    }
+                }
+                
+                li{
+                    @include flexbox(row,flex-end,center,0.5em);
+                    margin-top: 0.9em;
+                    
+                    p{
+                        @include p($Poppins,$muted);
+                    }
+                    span{
+                        padding: 4px;
+                        background-color: $black;
+                        border-radius: 100%;
+                    }
+
+                }
+                
+               
+            }
+        }
+}
+

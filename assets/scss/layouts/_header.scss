@@ -1,0 +1,124 @@
+
+header{
+
+    
+
+    .slider-wrap{
+        @include containerlg();
+        
+            height: 90vh;
+        .slider-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            @include flexbox(column,center,center,2em);
+            background-color: black;
+            z-index: 0;
+            .slider-img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: -2;
+                object-fit: cover;
+                opacity: 0.6;
+            }
+
+            .slider-content {
+                @include containermd();
+                @include flexbox(column,center,center,1.5em);
+                text-align: center;
+
+                   .slider-h2 {
+               @include h2($Ruthie,$yellow);
+            }
+            .slider-h1 {
+                @include h1($Abril,white);
+            }
+            .slider-text {
+                @include p($Poppins,white)
+            }
+            .button {
+                @include square-btn(transparent,$yellow);
+                margin-top: 3em;
+            }
+        }
+         
+        }
+    }
+
+}
+
+.header{
+    @include containerlg();
+    
+    height: 70vh;
+    position: relative;
+    
+    .svg-bottom{
+    //  @include svgBottom();
+    }
+    .header-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        background-attachment: fixed;
+        
+
+    }
+        .container{
+            @include containermd();
+            position: relative;
+            z-index: 3;
+            height: 100%;
+         
+            @include flexbox(row,center,flex-end,0);
+            .header-info{
+               
+                margin-bottom: 5em;
+                text-align: center;
+
+                h1{
+                    @include h1($Ruthie,$yellow);
+                }
+                h2{
+                    @include h2($Poppins,white);
+                    margin-top: 1em;
+                }
+
+                .header-links{
+                    margin-top: 7em;
+                    color: white;
+                    @include flexbox(row,center,center,1em);
+                    a{
+                        @include p($Poppins,white);
+                        &:hover{
+                            color: $yellow;
+                        }
+                    }
+                    span{
+                        @include p($Poppins,$yellow);
+                    }
+                }
+            }
+        }
+}
+
+
+
+
+
+
+    

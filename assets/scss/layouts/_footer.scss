@@ -1,0 +1,111 @@
+#footer{
+
+   
+    color: white;
+    padding: 7em 0 0 0;
+    text-align: center;
+    .container-lg{
+        background-color: $footerBg;
+        padding: 14em 0;
+        @include containerlg();
+        @include flexbox(column,center,flex-start,4em);
+        @include mq(sm){
+            @include flexbox(row,center,flex-start,0);
+        }
+
+        .col{
+            @include containermd();
+            @include flexbox(column,center,center,2em);
+            height: 100%;
+            padding: 2em;
+            
+            h3{
+                @include h3($Abril,white);
+                text-align: center
+            }
+            
+            .icons{
+                @include flexbox(row,auto,auto,1em);
+                a{
+                    color: white;
+                    padding: 1em;
+                    background-color: black;
+
+                    &:hover{
+                        background-color: $yellow;
+                    }
+
+                }
+            }
+
+            h1{
+                @include h1($Ruthie,$yellow);
+            }
+            p{
+                @include p($Poppins,$muted);
+                line-height: 1.5em;
+            }
+
+            form{
+                @include flexbox(column,center,stretch,2em);
+                width: 100%;
+                @include mq(sm){
+                    @include flexbox(column,center,flex-start,1em)
+                }
+
+                input{
+                    padding: 1em 0.5em;
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                   @include mq(sm){
+                    max-width: 80%;
+                   }
+                }
+
+                .join-btn{
+                    color: white;
+                    background-color: #444444;
+                    padding: 1em;
+                    font-family: $Poppins;
+                    font-weight: 600;
+                }
+            }
+        }
+
+    }
+    .footer-bottom{
+        @include containerlg();
+        position: relative;
+        background-color: black;
+        @include flexbox(column,center,center,3em);
+        padding: 5em 0;
+        
+.triangle{
+
+  
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 0 100px 30px 100px;
+        border-color: transparent transparent black transparent;
+        transform: rotate(0deg);
+        border-radius: 20px;
+        @include flexbox(row,center,center,0);
+        position: absolute;
+        top: -10px;
+        i{
+            color: white;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+    }
+        p{
+            @include p($Poppins,$muted);
+
+            span{
+                color: $yellow;
+            }
+        }
+    }
+}
