@@ -1,0 +1,119 @@
+// Dark mode theme + transition effects
+// Toggle is driven by [data-theme="dark"] on <html>, set in script.js and persisted in localStorage.
+
+:root{
+    --bg: white;
+    --text: #{$black};
+    --muted: #{$muted};
+    --surface: white;
+}
+
+html[data-theme="dark"]{
+    --bg: #121212;
+    --text: #ededed;
+    --muted: #b3b3b3;
+    --surface: #1c1c1c;
+}
+
+html,
+body,
+nav,
+.nav-list,
+footer,
+.footer-bottom,
+.card,
+.card-body,
+.modal-box,
+.cart-drawer,
+.theme-toggle,
+input,
+textarea,
+button{
+    transition: background-color .4s ease, color .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+
+body{
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+html[data-theme="dark"]{
+
+    .main-text{
+        color: var(--muted);
+    }
+
+    .name{
+        color: var(--text);
+    }
+
+    nav{
+        background-color: var(--surface);
+
+        .nav-wrap{
+
+            .nav-list{
+                background-color: rgba(28,28,28,.85);
+
+                li a{
+                    color: var(--text);
+                }
+            }
+
+            .nav-icon-list li a{
+                color: var(--text);
+            }
+
+            .bars span{
+                background-color: var(--text);
+            }
+
+            .logo img.logo-dark{
+                display: none;
+            }
+            .logo img.logo-light{
+                display: block;
+            }
+        }
+
+        @include mq(sm){
+            &:not(.active){
+                background-color: rgba(0,0,0,.3);
+            }
+            &.active{
+                background-color: var(--surface);
+            }
+        }
+    }
+
+    .menu-nav-item .menu-nav-link{
+        color: var(--text);
+    }
+
+    .menu .card-body h3{
+        color: var(--text);
+    }
+
+    .person-name,
+    .box-name{
+        color: var(--text);
+    }
+
+    .card-name{
+        color: var(--text);
+    }
+
+    #hello-section .left{
+        h1, p{
+            color: var(--text);
+        }
+    }
+
+    .contact-section .contact-card h3{
+        color: var(--text);
+    }
+
+    .award-section .container h1{
+        color: var(--text);
+    }
+}

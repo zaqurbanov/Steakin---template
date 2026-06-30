@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){if(localStorage.getItem("theme")==="dark"){document.documentElement.setAttribute("data-theme","dark");}})();</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/scss/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />   
@@ -11,12 +12,15 @@
     <title>Our chefs</title>
 </head>
 <body>
-   
+    <div class="page-loader" id="pageLoader"><span class="loader-spinner"></span></div>
+
     <nav class="nav" id="nav">
         <div class="nav-wrap">
             <div class="logo">
-<img src="images/logo-dark.png" alt="" class="logo-dark">  
+<a href="index.html">
+<img src="images/logo-dark.png" alt="" class="logo-dark">
     <img src="images/logo-light.png" alt="" class="logo-light">
+</a>
 </div>
             <ul class="nav-list">
                 <li><a href="index.html">HOME</a></li>
@@ -31,7 +35,8 @@
 
             <ul class="nav-icon-list">
                 <li class="nav-icon"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li class="nav-icon"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li class="nav-icon"><a href="" class="cart-link"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count">0</span></a></li>
+                <li class="nav-icon"><button type="button" class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon icon-moon"></i><i class="fa-solid fa-sun icon-sun"></i></button></li>
                 <li class="nav-icon"><a href=""><i class="fa-solid fa-bars"></i></a></li>
             </ul>
 

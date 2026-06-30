@@ -1,0 +1,91 @@
+.modal-overlay{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,.6);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+
+    &.open{
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.modal-box{
+    width: min(420px,90vw);
+    background-color: var(--surface, white);
+    color: var(--text, #{$black});
+    border-radius: 10px;
+    padding: 2.5em 2em;
+    position: relative;
+    transform: translateY(-20px) scale(.96);
+    transition: transform .35s ease, background-color .4s ease, color .4s ease;
+
+    .modal-overlay.open &{
+        transform: translateY(0) scale(1);
+    }
+
+    .modal-close{
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        background: none;
+        border: none;
+        font-size: 1.2em;
+        cursor: pointer;
+        color: inherit;
+    }
+
+    h3{
+        font-family: $Playfair;
+        font-size: 1.4em;
+        margin-bottom: .3em;
+        color: $yellow;
+    }
+
+    p{
+        font-family: $Poppins;
+        color: $muted;
+        margin-bottom: 1.5em;
+        font-size: .95em;
+    }
+
+    form{
+        @include flexbox(column,flex-start,stretch,1em);
+
+        input{
+            padding: .8em 1em;
+            border: 1px solid rgba(128,128,128,.35);
+            border-radius: 6px;
+            background-color: transparent;
+            color: inherit;
+            font-family: $Poppins;
+
+            &:focus{
+                outline: none;
+                border-color: $yellow;
+            }
+        }
+
+        button{
+            @include square-btn($yellow,transparent,$yellow,white,$yellow);
+            margin-top: .5em;
+        }
+    }
+
+    .modal-success{
+        font-family: $Poppins;
+        color: $yellow;
+        text-align: center;
+        display: none;
+
+        &.show{
+            display: block;
+        }
+    }
+}

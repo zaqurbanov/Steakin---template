@@ -25,10 +25,16 @@ nav{
             width: 20%;
             max-width: 200px;
            height: auto;
-       
+
             position: relative;
             z-index: 55;
-          
+
+            a{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
             img{
                 position: relative;
                 top: 0;
@@ -57,9 +63,11 @@ display: none;                }
           transition: all .5s ease;
          
           @include flexbox(column,flex-start,flex-start,1.5em);
-            
-           
-            background-color: white;
+
+
+            background-color: rgba(255,255,255,.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             // responsive
             @include mq(sm){
                 position: relative;
@@ -69,12 +77,13 @@ display: none;                }
                 top: 0;
                 opacity: 1;
                 background-color: transparent;
-                
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
 
                 li{
-                    
+
                 }
-                
+
 
             }
 
@@ -170,7 +179,9 @@ display: none;                }
     }
 
     @include mq(sm){
-        background-color: transparent;
+        background-color: rgba(0,0,0,.15);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         .nav-wrap{
 
             .nav-list{
@@ -209,6 +220,8 @@ display: none;                }
         &.active{
 
             background-color: white;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
             .nav-list{
 
                 li{

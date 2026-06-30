@@ -1,0 +1,51 @@
+// Fake loading screen + page transition animation shown between page navigations
+
+@keyframes pageFadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes loaderSpin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+body{
+    animation: pageFadeIn .5s ease both;
+}
+
+.page-loader{
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg, white);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .4s ease, background-color .4s ease, visibility 0s linear 0s;
+
+    .loader-spinner{
+        display: block;
+        width: 44px;
+        height: 44px;
+        border: 3px solid rgba(187,147,86,.25);
+        border-top-color: $yellow;
+        border-radius: 50%;
+        animation: loaderSpin .8s linear infinite;
+    }
+
+    &.hide{
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s ease, background-color .4s ease, visibility 0s linear .4s;
+    }
+}
